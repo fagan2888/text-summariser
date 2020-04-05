@@ -1,0 +1,25 @@
+service: textsum-rest-api
+provider:
+  name: aws
+  runtime: python3.7
+  region: ap-southeast-2
+
+package:
+  individually: true
+  exclude:
+    - node_modules/**
+    - venv/**
+
+functions:
+  text_post:
+    handler: extraction.text_post
+    events:
+      - http:
+          path: textsum
+          method: POST
+
+plugins:
+  - serverless-python-requirements
+custom:
+  pythonRequirements:
+    dockerizePip: true
