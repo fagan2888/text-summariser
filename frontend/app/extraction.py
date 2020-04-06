@@ -51,11 +51,11 @@ def generate_summary(full_text, n_components=2, info_ratio = 0.2, min_length=2, 
    # full_text = full_text.replace('\n',' ')
   #  sentences = full_text.split('. ')
     sentences = re.split(r"\. |\.\n|\?|\?\n|\!|\!\n|\.\r|\r", full_text)
-    print('input text:')
-    for i in sentences:
-        print(i)
-        print('ha')
-    print('***')
+   # print('input text:')
+   # for i in sentences:
+   #     print(i)
+   #     print('break')
+   # print('***')
     for i in range(0,len(sentences)):
        # sentences[i] = re.sub(r"\n","",sentences[i]).strip() 
         sentences[i] = sentences[i].strip()
