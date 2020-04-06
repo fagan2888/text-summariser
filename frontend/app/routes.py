@@ -24,9 +24,9 @@ def index():
         summarised_text = extraction.app_post(full_text)
         summarised_text = summarised_text.split('\n')
         print(summarised_text)
-        return render_template('index.html', title='Home', form=form, summary = summarised_text)
+        return render_template('index.html', title='Home', form=form, summary = summarised_text, scroll=True)
     else:
-        return render_template('index.html', title='Home', form=form, summary = summarised_text)
+        return render_template('index.html', title='Home', form=form, summary = summarised_text, scroll=False)
 
 @app.route('/about', methods=['GET'])
 def about():

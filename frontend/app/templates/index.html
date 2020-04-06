@@ -16,7 +16,7 @@
                     {{ form.submit(class="btn btn-success") }}
                 </div>
 
-                <div style ="margin-bottom: 50px;">
+                <div style ="margin-bottom: 50px;" id="result">
                     <h4>Your summary ...</h4>
                 <p>
                 {% for para in summary %}
@@ -26,6 +26,13 @@
                 </p>
                 </div>
             </div>
+            {% if scroll %}
+            <script>
+                document.getElementById('result').scrollIntoView();
+            </script>
+            {% endif %}
         </div
+
     </form>
 {% endblock %}
+
