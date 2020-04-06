@@ -49,8 +49,13 @@ def clean_text(text):
 
 def generate_summary(full_text, n_components=2, info_ratio = 0.2, min_length=2, max_length=4, order_factor=1.05, min_sentence_len = 4):
    # full_text = full_text.replace('\n',' ')
-    sentences = full_text.split('. ')
-    sentences = re.split(r"\. |\.\n|\?|\?\n|\!|\!\n", full_text)
+  #  sentences = full_text.split('. ')
+    sentences = re.split(r"\. |\.\n|\?|\?\n|\!|\!\n|\.\r|\r", full_text)
+    print('input text:')
+    for i in sentences:
+        print(i)
+        print('ha')
+    print('***')
     for i in range(0,len(sentences)):
        # sentences[i] = re.sub(r"\n","",sentences[i]).strip() 
         sentences[i] = sentences[i].strip()
@@ -94,9 +99,14 @@ def generate_summary(full_text, n_components=2, info_ratio = 0.2, min_length=2, 
                 print('total info ', total_information)
 
     summary_text = ''
+    MAX_SENTENCES = 4
+    count = 0
     for i in range(data.shape[0]):
+        print(count)
+        if count > MAX_SENTENCES: break
         if i in summary_indices:
             summary_text = summary_text + data.loc[i,'sentence'] + '.\n'
+            count += 1
     
   #  print('SUMMMARY:')
     return summary_text[:-1]
