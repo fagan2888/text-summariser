@@ -1,4 +1,4 @@
-# textLSAsummariser
+# A text summariser application
 A text summariser web app using latent semantic analysis, hosted on AWS EC2 with optional API on AWS Lambda.  
 [Web app link](http://13.55.103.147/index)
 ### API folder
@@ -6,7 +6,7 @@ Code to deploy the SLA summariser as a microservice API on AWS Lambda.
 ### Frontend folder
 A web front end implemented in Flask.
 
-### Background Two types of summarisers:  
+### Background - two types of summarisers:  
 **Extractive**: A summary is formed by picking the most important sentences in the given text based on a scoring system. Common approaches:
 
   * Using topic words.  
