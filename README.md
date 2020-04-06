@@ -1,6 +1,6 @@
 # A text summariser application
 A text summariser web app using latent semantic analysis, hosted on AWS EC2 with optional API on AWS Lambda.  
-[Web app link](http://13.55.103.147/index)
+[Web app link](http://3.105.177.93/index)
 ### API folder
 Code to deploy the SLA summariser as a microservice API on AWS Lambda.
 ### Frontend folder
