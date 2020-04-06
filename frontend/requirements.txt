@@ -1,3 +1,7 @@
 requests
 flask-wtf
 waitress
+nltk
+numpy
+pandas
+scikit-learn

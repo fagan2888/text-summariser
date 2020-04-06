@@ -99,13 +99,13 @@ def generate_summary(full_text, n_components=2, info_ratio = 0.2, min_length=2, 
             summary_text = summary_text + data.loc[i,'sentence'] + '.\n'
     
   #  print('SUMMMARY:')
-    return summary_text[:-2]
+    return summary_text[:-1]
 
 def app_post(full_text):
     sentence_count = len(full_text.split('.'))
     word_count = len(full_text.split(' '))
     if sentence_count < 4 or word_count < 25:
-        summarised_text = "You do not need a summary for that..."
+        summarised_text = "You do not need a summary for that tiny text, try something longer ..."
     else:
         summarised_text = generate_summary(full_text, 
                                 n_components=3, 

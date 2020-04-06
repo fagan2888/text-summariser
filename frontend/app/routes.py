@@ -10,8 +10,9 @@ url = API_ENDPOINT.URL
 @app.route('/', methods=['GET', 'POST'])
 @app.route('/index', methods=['GET', 'POST'])
 def index():
-    summarised_text = ['Appear here']
+    summarised_text = ['']
     form = TextSumForm()
+    
     if request.method == 'POST':
         full_text = request.form['inputText']
         data = {"text":
@@ -27,3 +28,6 @@ def index():
     else:
         return render_template('index.html', title='Home', form=form, summary = summarised_text)
 
+@app.route('/about', methods=['GET'])
+def about():
+        return render_template('about.html')

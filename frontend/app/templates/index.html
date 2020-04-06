@@ -1,22 +1,31 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block pagecontent %}
     <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.inputText.label }}<br>
-            {{ form.inputText }}
-            {{ form.outputText }}
-        </p>
-        <p>{{ form.submit() }}</p>
-        <p>
-         {% for para in summary %}
-            {{para}}
-            <br/>
-        {% endfor %}
-        </p>
+        <div class="container">
+            {{ form.hidden_tag() }}
+            <div class="col">
+                <div class="col">
+                    <h4> Copy that long text here </h4>
+                </div>
+                <div style="width: 100%">  
+                    {{ form.inputText(style="width:100%;height:130px;") }}
+                </div>
 
-       
+                <div style = "margin: 10px; text-align: right;">
+                    {{ form.submit(class="btn btn-success") }}
+                </div>
 
+                <div style ="margin-bottom: 50px;">
+                    <h4>Your summary ...</h4>
+                <p>
+                {% for para in summary %}
+                    {{para}}
+                    <br/>
+                {% endfor %}
+                </p>
+                </div>
+            </div>
+        </div
     </form>
 {% endblock %}
