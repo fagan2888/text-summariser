@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block pagecontent %}
+    <div class="container">
+        <div class="col">
+            <div style="width: 100%; margin-bottom: 50px;">  
+                <h5>TL;DR: This text summariser is an extractive, LSA-based summariser. </h5>
+                <h5>This website was built with <a href="https://flask.palletsprojects.com/en/1.1.x/">Flask</a>, <a href="https://getbootstrap.com/">Bootstrap</a> and hosted on AWS EC2.</h5>
+                <p> The long About ...</p>
+                <p>
+                    Two types of summarisers [1]: </br>
+                    <b>Extractive:</b> summary is formed by picking the most important sentences in the given text based on a scoring system. Common approaches:
+                   <ul>
+                        <li>Using topic words.</li>
+                        <li>Frequency-driven: how often each word in the sentence appear within and without the sentence.</li>
+                        <li>Latent semantic analysis: An unsupervised method to discover the underlying semantics (topics) of the text. </li>
+                    </ul>
+                    <b>Abstractive: </b>Using advanced analytics techniques such as deep learning (CNN, RNN with LSTM) to generate a new text that conveys the key information in the original.
+                </p>
+                <p>
+                    <h5>A summary of this implementation:</h5>
+                    <ul >
+                        <li>The sentences are cleaned and lemmatised (convert words to their root form, i.e. grew to grow).</li>
+                        <li>A term-sentence matrix is built with TF-IDF (term frequency inverse document frequency).</li>
+                        <li>Apply SVD (singular value decomposition) on the above matrix.</li>
+                        <li>Each sentence is given a weight based on how much information they contain for important topics. This approach is based on the sentence length approach proposed by [2]. </li>
+                        <li>Sentences that are at the top of the text is given a slightly higher weight.</li>
+                        <li>Sentences are added to the summary one by one until a set ratio of information is reached.</li>
+                    </ul>
+                <p>
+                    <h5>Contact: <a href="jnqtri@gmail.com">Tri Nguyen - email</a></h5>
+                    
+                </p>
+                </p> 
+
+                <div style="padding-left: 20px; ">
+                    <p>
+                        <h5>Reference:</h5>
+                        <ul >
+                            <li>[1] Allahyari, M, Pouriyeh, S. et al (2017). Text Summarization Techniques: A Brief Survey.</li>
+                            <li>[2] Steinberger, J, Poesio, M. et al (2007). Two uses of anaphora resolution in summarization.</li>
+                        </ul>
+                    </p>
+                </div>
+              
+            </div>
+
+
+
+        </div>
+    </div
+
+{% endblock %}
